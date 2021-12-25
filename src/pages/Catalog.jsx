@@ -1,5 +1,6 @@
 import React from "react";
+import Helmet from "../components/Helmet";
 
 export const Catalog = () => {
-  return <div>Catalog</div>;
+  return <Helmet title="Catalog">Catalog</Helmet>;
 };

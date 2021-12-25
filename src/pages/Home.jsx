@@ -1,5 +1,6 @@
 import React from "react";
+import Helmet from "../components/Helmet";
 
 export const Home = () => {
-  return <div>Home</div>;
+  return <Helmet title="Homepage">Home</Helmet>;
 };
