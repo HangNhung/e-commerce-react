@@ -2,7 +2,7 @@ import React from "react";
 
 import { BrowserRouter } from "react-router-dom";
 import { Header, Footer } from "../components/index";
-import Navigation from "../routes/Routes";
+import Routes from "../routes/Routes";
 const Layout = () => {
   return (
     <div>
@@ -11,7 +11,7 @@ const Layout = () => {
           <div className="container">
             <Header />
             <div className="main">
-              <Navigation />
+              <Routes />
             </div>
             <Footer />
           </div>
