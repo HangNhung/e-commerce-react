@@ -29,6 +29,4 @@ const heroSliderData = [
   },
 ];
 
-console.log(heroSliderData);
-
 export default heroSliderData;
