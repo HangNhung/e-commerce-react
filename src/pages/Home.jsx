@@ -11,6 +11,8 @@ import policy from "../assets/fake-data/policy";
 import productData from "../assets/fake-data/products";
 import ProductCard from "../components/ProductCard";
 
+import banner from "../assets/images/banner.png";
+
 export const Home = () => {
   return (
     <Helmet title="Homepage">
@@ -22,6 +24,7 @@ export const Home = () => {
         timeOut={5000}
       />
       {/* End - Hero slider */}
+
       {/* policy section */}
       <Section>
         <SectionBody>
@@ -35,6 +38,7 @@ export const Home = () => {
         </SectionBody>
       </Section>
       {/* End - policy section */}
+
       {/* best selling section */}
       <Section>
         <SectionTitle>Top selling products of the week</SectionTitle>
@@ -56,6 +60,38 @@ export const Home = () => {
         </SectionBody>
       </Section>
       {/* End - best selling section */}
+
+      {/* new arrival section */}
+      <Section>
+        <SectionTitle>New Arrival Products</SectionTitle>
+        <SectionBody>
+          <Grid col={4} mdCol={2} smCol={1} gap={20}>
+            {productData.getProducts(8).map((item, index) => (
+              // <Link to="/product">
+              <ProductCard
+                key={index}
+                img01={item.image01}
+                img02={item.image02}
+                name={item.title}
+                price={parseInt(item.price)}
+                slug={item.slug}
+              />
+              // </Link>
+            ))}
+          </Grid>
+        </SectionBody>
+      </Section>
+      {/* End - new arrival section */}
+
+      {/* banner */}
+      <Section>
+        <SectionBody>
+          <Link to="/catalog">
+            <img style={{ maxWidth: "100%" }} src={banner} alt="" />
+          </Link>
+        </SectionBody>
+      </Section>
+      {/* End - banner */}
     </Helmet>
   );
 };
