@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
+import Button from "./Button";
 
 const HeroSlider = ({ data, control, timeOut: timeOutDefault, auto }) => {
   const timeOut = timeOutDefault ? timeOutDefault : 3000;
@@ -78,7 +79,14 @@ const HeroSliderItem = (props) => (
 
       <div className="hero-slider__item__info__btn">
         <Link to={props.item.path}>
-          <button>View Details</button>
+          <Button
+            backgroundColor={props.item.color}
+            icon="bx bx-cart"
+            animate={true}
+            size="sm"
+          >
+            View Details
+          </Button>
         </Link>
       </div>
     </div>
