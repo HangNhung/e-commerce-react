@@ -11,7 +11,7 @@ const Button = (props) => {
   return (
     <button
       className={`btn ${backgroundColor} ${size} ${animate}`}
-      onClick={props.onClick ? () => props.onClick : null}
+      onClick={props.onClick ? props.onClick : null}
     >
       <span className="btn__txt">{props.children}</span>
       {props.icon ? (
