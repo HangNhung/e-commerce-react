@@ -13,7 +13,7 @@ const mainNav = [
     path: "/catalog",
   },
   {
-    label: "Home",
+    label: "Assessories",
     path: "/assessories",
   },
   {

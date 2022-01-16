@@ -6,9 +6,9 @@ const Routes = () => {
   return (
     <RoutesDom>
       <Route path="/" element={<Home />} />
-      <Route path="/catalog" element={<Catalog />}>
-        <Route path=":slug" element={<Product />} />
-      </Route>
+      <Route path="/catalog/" element={<Catalog />}></Route>
+      <Route path="/catalog/:slug" element={<Product />} />
+
       <Route path="/cart" element={<Cart />} />
     </RoutesDom>
   );
