@@ -1,7 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
 import Helmet from "../components/Helmet";
-import Grid from "../components/Grid";
-import ProductCard from "../components/ProductCard";
 import Checkbox from "../components/Checkbox";
 
 import productCard from "../assets/fake-data/products";
@@ -9,6 +7,7 @@ import category from "../assets/fake-data/category";
 import colors from "../assets/fake-data/product-color";
 import size from "../assets/fake-data/product-size";
 import Button from "../components/Button";
+import InfinityList from "../components/InfinityList";
 
 export const Catalog = () => {
   const initFilter = {
@@ -180,20 +179,7 @@ export const Catalog = () => {
             </div>
           </div>
         </div>
-        <div className="catalog__content">
-          <Grid col={3} mdCol={2} smCol={1} gap={20}>
-            {products.map((item, index) => (
-              <ProductCard
-                key={index}
-                img01={item.image01}
-                img02={item.image02}
-                name={item.title}
-                price={parseInt(item.price)}
-                slug={item.slug}
-              />
-            ))}
-          </Grid>
-        </div>
+        <InfinityList data={products} />
       </div>
     </Helmet>
   );
