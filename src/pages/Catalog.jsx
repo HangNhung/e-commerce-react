@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "../components/Helmet";
 import Grid from "../components/Grid";
 import ProductCard from "../components/ProductCard";
+import Checkbox from "../components/Checkbox";
 
 import productCard from "../assets/fake-data/products";
 import category from "../assets/fake-data/category";
@@ -17,9 +18,12 @@ export const Catalog = () => {
             </div>
             <div className="catalog__filter__widget__content">
               {category.map((item, index) => (
-                <p className="catalog__filter__widget__content__item">
-                  {item.display}
-                </p>
+                <div
+                  key={index}
+                  className="catalog__filter__widget__content__item"
+                >
+                  <Checkbox label={item.display} />
+                </div>
               ))}
             </div>
           </div>
