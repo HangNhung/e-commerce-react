@@ -228,8 +228,6 @@ const getProducts = (count) => {
   return products.slice(start, start + count);
 };
 
-console.log(getProducts(4));
-
 const productData = {
   getAllProducts,
   getProducts,
