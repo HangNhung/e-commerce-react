@@ -158,6 +158,25 @@ const ProductView = (props) => {
           <Button onClick={addToCart}>Add to cart</Button>
           <Button onClick={gotoCart}>Buy now</Button>
         </div>
+        <div
+          className={`product-description mobile ${
+            descriptionExpand ? "expand" : ""
+          }`}
+        >
+          <div className="product-description__title">Product Details</div>
+          <div
+            className="product-description__content"
+            dangerouslySetInnerHTML={{ __html: product.description }}
+          ></div>
+          <div className="product-description__toggle">
+            <Button
+              size="sm"
+              onClick={() => setDescriptionExpand(!descriptionExpand)}
+            >
+              {descriptionExpand ? "Collapse" : "View more"}
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
