@@ -190,7 +190,9 @@ export const Catalog = () => {
             Filter
           </Button>
         </div>
-        <InfinityList data={products} />
+        <div className="catalog__content">
+          <InfinityList data={products} />
+        </div>
       </div>
     </Helmet>
   );

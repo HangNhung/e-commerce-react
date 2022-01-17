@@ -18,11 +18,13 @@ const InfinityList = (props) => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (
-        window.scrollY + window.innerHeight >=
-        listRef.current.clientHeight + listRef.current.offsetTop + 200
-      ) {
-        setLoad(true);
+      if (listRef.current && listRef.current.clientHeight) {
+        if (
+          window.scrollY + window.innerHeight >=
+          listRef.current.clientHeight + listRef.current.offsetTop + 200
+        ) {
+          setLoad(true);
+        }
       }
     });
   }, [listRef]);
@@ -46,7 +48,7 @@ const InfinityList = (props) => {
   }, [load, index, data, props.data]);
 
   return (
-    <div ref={listRef} className="catalog__content">
+    <div ref={listRef}>
       <Grid col={3} mdCol={2} smCol={1} gap={20}>
         {data.map((item, index) => (
           <ProductCard

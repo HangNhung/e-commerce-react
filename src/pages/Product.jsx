@@ -19,7 +19,7 @@ export const Product = (props) => {
   }, [product]);
 
   return (
-    <Helmet title="Product">
+    <Helmet title={product.title}>
       <Section>
         <SectionBody>
           <ProductView product={product} />
