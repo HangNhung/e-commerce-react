@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Header, Footer } from "../components/index";
 import Routes from "../routes/Routes";
+import ProductViewModal from "./ProductViewModal";
 const Layout = () => {
   return (
     <div>
@@ -14,6 +15,7 @@ const Layout = () => {
               <Routes />
             </div>
             <Footer />
+            <ProductViewModal />
           </div>
         </div>
       </BrowserRouter>
