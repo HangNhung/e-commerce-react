@@ -6,7 +6,14 @@ import { useNavigate } from "react-router-dom";
 
 const ProductView = (props) => {
   const navigate = useNavigate();
-  const product = props.product;
+  let product = props.product;
+  if (product === undefined)
+    product = {
+      price: 0,
+      title: "",
+      colors: [],
+      size: [],
+    };
 
   const [previewImg, setPreviewImg] = useState("");
   const [descriptionExpand, setDescriptionExpand] = useState(false);
