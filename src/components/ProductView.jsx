@@ -3,9 +3,12 @@ import PropTypes from "prop-types";
 import Button from "./Button";
 import numberWithCommas from "../utils/numberWithCommas";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addItem } from "../redux/shopping-cart/cartItemsSlide";
 
 const ProductView = (props) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   let product = props.product;
   if (product === undefined)
     product = {
@@ -51,11 +54,34 @@ const ProductView = (props) => {
   };
 
   const addToCart = () => {
-    check();
+    if (check()) {
+      dispatch(
+        addItem({
+          slug: product.slug,
+          color: color,
+          size: size,
+          quantity: quantity,
+          price: product.price,
+        })
+      );
+
+      alert("Success");
+    }
   };
 
   const gotoCart = () => {
-    navigate("/cart");
+    if (check()) {
+      dispatch(
+        addItem({
+          slug: product.slug,
+          color: color,
+          size: size,
+          quantity: quantity,
+          price: product.price,
+        })
+      );
+      navigate("/cart");
+    }
   };
 
   return (

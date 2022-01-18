@@ -266,10 +266,25 @@ const getProducts = (count) => {
 
 const getProductBySlug = (slug) => products.find((e) => e.slug === slug);
 
+const getCartItemsDetails = (cartItems) => {
+  let res = [];
+  if (cartItems.length > 0) {
+    cartItems.forEach((element) => {
+      let product = getProductBySlug(element.slug);
+      res.push({
+        ...element,
+        product: product,
+      });
+    });
+  }
+  return res;
+};
+
 const productData = {
   getAllProducts,
   getProducts,
   getProductBySlug,
+  getCartItemsDetails,
 };
 
 export default productData;
